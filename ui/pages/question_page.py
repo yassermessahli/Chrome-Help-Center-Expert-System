@@ -2,12 +2,12 @@ import tkinter as tkinter
 
 import customtkinter as tk
 
-import widgets as w
-from categories import categories
-from constants import constants
-from globals import answers
-from pages.result_page import result_page as result_page_function
-from routing import Routes
+import ui.widgets as w
+from ui.categories import categories
+from ui.constants import constants
+from ui.globals import answers
+from ui.pages.result_page import result_page as result_page_function
+from ui.routing import Routes
 import ast
 
 

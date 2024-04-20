@@ -1,4 +1,4 @@
-from constants import constants
+from ui.constants import constants
 
 categories = [
     {
@@ -13,9 +13,9 @@ categories = [
                 "options": [
                     {"text": "Usually under 5", "value": "Tabs(Low)"},
                     {"text": "Between 5 and 10", "value": "Tabs(Low)"},
-                    {"text": "Between 10 and 20", "value": "Tabs(Hight)"},
-                    {"text": "More than 20", "value": "Tabs(Hight)"},
-                    {"text": "I don't know", "value": "Tabs(Hight)"},
+                    {"text": "Between 10 and 20", "value": "Tabs(High)"},
+                    {"text": "More than 20", "value": "Tabs(High)"},
+                    {"text": "I don't know", "value": "Tabs(High)"},
                 ],
             },
             {

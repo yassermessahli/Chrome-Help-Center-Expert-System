@@ -1,6 +1,6 @@
 import customtkinter as tk
 
-from constants import constants
+from ui.constants import constants
 
 
 class Routes:
@@ -13,7 +13,7 @@ class Routes:
     app.geometry(f"{width}x{height}+{x}+{y}")
 
     app.title("Google Chrome Technical Support")
-    app.iconbitmap(constants.fav_icon)
+    # app.iconbitmap(constants.fav_icon)
 
     # Configure the root window's grid (weights for full size)
     app.grid_columnconfigure(0, weight=1)  # Weight for column 0

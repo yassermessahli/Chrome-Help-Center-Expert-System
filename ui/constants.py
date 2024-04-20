@@ -1,18 +1,18 @@
 class constants:
-    chrome_logo = "./assets/chrome_logo.png"
-    fav_icon = "./assets/fav.ico"
+    chrome_logo = "./ui/assets/chrome_logo.png"
+    fav_icon = "./ui/assets/fav.ico"
 
     # icons
-    performance_icon = "./assets/performance_icon.png"
-    security_icon = "./assets/security_icon.png"
-    solution_icon = "./assets/solution.png"
-    install_icon = "./assets/install_icon.png"
-    web_content_icon = "./assets/web_content_icon.png"
-    sync_icon = "./assets/sync_icon.png"
-    connection_icon = "./assets/connection_icon.png"
-    payment_and_password_icon = "./assets/payment_and_password_icon.png"
-    theme_icon = "./assets/theme_icon.png"
-    search_icon = "./assets/search_icon.png"
+    performance_icon = "./ui/assets/performance_icon.png"
+    security_icon = "./ui/assets/security_icon.png"
+    solution_icon = "./ui/assets/solution.png"
+    install_icon = "./ui/assets/install_icon.png"
+    web_content_icon = "./ui/assets/web_content_icon.png"
+    sync_icon = "./ui/assets/sync_icon.png"
+    connection_icon = "./ui/assets/connection_icon.png"
+    payment_and_password_icon = "./ui/assets/payment_and_password_icon.png"
+    theme_icon = "./ui/assets/theme_icon.png"
+    search_icon = "./ui/assets/search_icon.png"
 
     # categories colors
     blue100 = "#bbdefb"

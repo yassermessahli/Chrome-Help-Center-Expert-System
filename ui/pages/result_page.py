@@ -2,11 +2,11 @@ import tkinter as tkinter
 
 import customtkinter as tk
 
-import widgets as w
-from constants import constants
-from globals import answers
-from routing import Routes
-
+import ui.widgets as w
+from ui.constants import constants
+from ui.globals import answers
+from ui.routing import Routes
+from expert_system.engine import run
 
 
 def result_page():
@@ -19,12 +19,11 @@ def result_page():
     w.GapH(page, height=20).pack()
 
     print(f"====================\nAnswers: {answers}\n====================")
+    result, explanation = run("Performance", answers)
 
-    # result, explanation = run(answers)
+    print(f"====================\nResult: {result}\n====================")
 
-    # print(f"====================\nResult: {result}\n====================")
-
-    # print(f"====================\nExplanation: {explanation}\n====================")
+    print(f"====================\nExplanation: {explanation}\n====================")
 
     # show answers
     tk.CTkLabel(

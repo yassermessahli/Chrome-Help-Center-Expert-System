@@ -1,9 +1,9 @@
 # import the necessary packages
 from aima3.utils import expr
 from aima3.logic import FolKB
-from krb import rules
-from forward_chaining import ask
-from utils import Agenda
+from expert_system.krb import rules
+from expert_system.forward_chaining import ask
+from expert_system.utils import Agenda
 
 
 
@@ -30,4 +30,4 @@ def run(category: str, answers: list):
     try:
         return result[0], explanation_unit
     except Exception:
-        return None, explanation_unit
+        return None, {}

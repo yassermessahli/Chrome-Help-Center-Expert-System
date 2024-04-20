@@ -2,9 +2,9 @@ import tkinter as tkinter
 
 import customtkinter as tk
 
-import widgets as w
-from constants import constants
-from routing import Routes
+import ui.widgets as w
+from ui.constants import constants
+from ui.routing import Routes
 
 
 def second_page():

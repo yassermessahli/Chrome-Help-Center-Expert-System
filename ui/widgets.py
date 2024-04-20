@@ -5,11 +5,11 @@ import awesometkinter as atk
 import customtkinter as tk
 from PIL import Image
 
-import utils
-import widgets as w
-from constants import constants
-from routing import Routes
-from pages.question_page import question_page as question_page_function
+import ui.utils as utils
+import ui.widgets as w
+from ui.constants import constants
+from ui.routing import Routes
+from ui.pages.question_page import question_page as question_page_function
 
 
 ## This file will contain custom helper widgets that can be used in the main.py file
@@ -170,7 +170,7 @@ class SolutionCard(tk.CTkFrame):
             **kwargs,
         )
 
-        solution_icon = ImageWidget(self, image_path="./assets/solution.png", scale=0.6)
+        solution_icon = ImageWidget(self, image_path="./ui/assets/solution.png", scale=0.6)
         solution_icon.pack(side="left", padx=20, pady=30, anchor=tkinter.NW)
 
         w.GapH(self, height=20).pack()
