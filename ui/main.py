@@ -11,6 +11,7 @@ from pages.welcome_page import welcome_page
 from pages.result_page import result_page
 from routing import Routes
 
+from ExpertSystem.engine import run
 
 tk.set_default_color_theme("./theme.json")
 tk.set_appearance_mode("light")
