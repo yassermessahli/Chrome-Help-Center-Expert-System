@@ -2,11 +2,11 @@ import tkinter as tkinter
 
 import customtkinter as tk
 
+import ui.globals as g
 import ui.widgets as w
 from ui.constants import constants
-from ui.globals import answers
 from ui.routing import Routes
-from expert_system.engine import run
+from ui.utils import solution_and_explanation
 
 
 def result_page():
@@ -18,54 +18,12 @@ def result_page():
 
     w.GapH(page, height=20).pack()
 
-    print(f"====================\nAnswers: {answers}\n====================")
-    result, explanation = run("Performance", answers)
+    result, solution, link, explanation = solution_and_explanation()
 
-    print(f"====================\nResult: {result}\n====================")
-
-    print(f"====================\nExplanation: {explanation}\n====================")
-
-    # show answers
-    tk.CTkLabel(
-        page,
-        text="Your answers:",
-        font=("Product Sans", 18),
-        text_color=constants.grey700,
-    ).pack()
-    for answer in answers:
-        tk.CTkLabel(
-            page,
-            text=answer,
-            font=("Product Sans", 16),
-            text_color=constants.grey700,
-        ).pack(pady=5)
-
-    # a button to clear the answers
-    clear_button = tk.CTkButton(
-        page,
-        text="Clear Answers",
-        fg_color=constants.red600,
-        height=50,
-        width=200,
-        command=lambda: answers.clear(),
-    )
-    clear_button.pack(pady=10, padx=20)
-
-    title2 = tk.CTkLabel(
-        page,
-        text="We found a solution for your problem!",
-        font=("Product Sans", 18),
-        text_color=constants.grey700,
-    )
-    title2.pack()
-
-    w.GapH(page, height=10).pack()
-
-    w.SolutionCard(page).pack(expand=True, fill="both", padx=20)
-
-    w.GapH(page, height=20).pack()
-
-    w.OtherSolutionCard(page).pack(expand=True, fill="both", padx=20)
+    if solution is None:
+        render_no_solution()
+    else:
+        render_solution(result, solution, link, explanation)
 
     w.GapH(page, height=20).pack()
 
@@ -75,9 +33,57 @@ def result_page():
         text="Return to Home",
         fg_color=constants.blue600,
         height=50,
-        width=200,
-        command=lambda: Routes.go_to(Routes.welcome_page, run_function=answers.clear),
+        width=300,
+        command=lambda: Routes.go_to(Routes.welcome_page, run_function=g.reset),
     )
     home_button.pack(pady=10, padx=20)
 
     w.GapH(page, height=60).pack()
+
+
+def render_solution(result, solution, link, explanation):
+    page = Routes.result_page
+
+    title = tk.CTkLabel(
+        page,
+        text="We found a solution for your problem!",
+        font=("Product Sans", 18),
+        text_color=constants.grey700,
+        anchor=tkinter.W,
+    )
+    title.pack(anchor=tkinter.W, padx=20)
+
+    subtitle = tk.CTkLabel(
+        page,
+        text=f"Problem Code: {result}",
+        font=("Product Sans", 16),
+        text_color=constants.blue600,
+        anchor=tkinter.W,
+    )
+    subtitle.pack(anchor=tkinter.W, padx=20)
+
+    w.GapH(page, height=10).pack()
+
+    w.SolutionCard(
+        page,
+        text=solution,
+        link=link,
+    ).pack(expand=True, fill="both", padx=20)
+
+    w.GapH(page, height=20).pack()
+
+    w.OtherSolutionCard(
+        page,
+        text=explanation,
+    ).pack(expand=True, fill="both", padx=20)
+
+
+def render_no_solution():
+    page = Routes.result_page
+    w.GapH(page, height=Routes.app.winfo_screenheight() // 6).pack()
+    tk.CTkLabel(
+        page,
+        text="We couldn't find a solution for your problem.\nPlease contact Google Chrome Technical Support.",
+        font=("Product Sans", 18),
+        text_color=constants.grey700,
+    ).pack()

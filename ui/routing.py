@@ -13,7 +13,7 @@ class Routes:
     app.geometry(f"{width}x{height}+{x}+{y}")
 
     app.title("Google Chrome Technical Support")
-    # app.iconbitmap(constants.fav_icon)
+    app.iconbitmap(constants.fav_icon)
 
     # Configure the root window's grid (weights for full size)
     app.grid_columnconfigure(0, weight=1)  # Weight for column 0
@@ -43,13 +43,13 @@ class Routes:
     def go_to(page: tk.CTkScrollableFrame, run_function: callable = None):
         for route in Routes.routes:
             route.grid_forget()
-        
+
         if run_function:
             run_function()
         page.grid(row=0, column=0, sticky="nsew")
         page.tkraise()
 
-    welcome_page.grid(row=0, column=0, sticky="nsew")
+    result_page.grid(row=0, column=0, sticky="nsew")
 
     routes = [
         welcome_page,

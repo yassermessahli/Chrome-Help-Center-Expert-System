@@ -37,10 +37,11 @@ def welcome_page():
     page.grid_columnconfigure(0, weight=1)  # Weight for column 0
     page.grid_columnconfigure(1, weight=1)  # Weight for column 1 (adjust if needed)
 
-    for category in constants.categories:
+    for (index, category) in enumerate(constants.categories):
         w.Card(
             page,
             category,
+            index
         ).pack(padx=20, pady=6, expand=True, fill=tkinter.X)
 
     w.GapH(page, height=40).pack()

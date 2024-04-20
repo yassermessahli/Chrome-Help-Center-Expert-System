@@ -20,10 +20,16 @@ def main():
 
     restult, explanation = run("Performance", answers)
 
-    print(f"Result: {restult}")
+    print()  # ExtensionRelatedSlowdown
+
+    print(
+        list(explanation.values())
+    )  # Extensions are causing the slowdown. Try disabling some extensions to improve performance.
 
 
-# if __name__ == "__main__":
-#     main()
-ExtensionRelatedSlowdown
-ExtensionRelatedSlowdown
+if __name__ == "__main__":
+    main()
+
+
+
+

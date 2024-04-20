@@ -135,9 +135,12 @@ categories = [
             {
                 "question": "When you experience slow browsing, particularly when opening new tabs, does your computer feel sluggish overall?",
                 "options": [
-                    {"text": "Yes, my computer feels sluggish", "value": "NewTabs(Slow)"},
+                    {
+                        "text": "Yes, my computer feels sluggish",
+                        "value": "NewTabs(Slow)",
+                    },
                     {"text": "No, my computer is responsive", "value": "NewTabs(Fast)"},
-                    {"text": "I'm not sure", "value": "New"},
+                    {"text": "I'm not sure", "value": "NewTabs(Fast)"},
                 ],
             },
             {

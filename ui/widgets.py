@@ -5,20 +5,25 @@ import awesometkinter as atk
 import customtkinter as tk
 from PIL import Image
 
+import ui.globals as g
 import ui.utils as utils
 import ui.widgets as w
 from ui.constants import constants
-from ui.routing import Routes
 from ui.pages.question_page import question_page as question_page_function
-
-
-## This file will contain custom helper widgets that can be used in the main.py file
+from ui.routing import Routes
 
 
 ## Spacing
 class GapH(tk.CTkFrame):
     def __init__(self, master, height=10, **kwargs):
-        super().__init__(master, height=height, width=0, **kwargs)
+        super().__init__(
+            master,
+            height=height,
+            width=0,
+            fg_color=constants.grey100,
+            bg_color=constants.grey100,
+            **kwargs,
+        )
 
 
 class GapW(tk.CTkFrame):
@@ -64,6 +69,7 @@ class Card(tk.CTkFrame):
         self,
         master,
         category,
+        index,
         title_color=constants.grey800,
         description_color=constants.grey600,
         **kwargs,
@@ -72,7 +78,6 @@ class Card(tk.CTkFrame):
         bg_color = category["color"]
         title = category["title"]
         description = category["description"]
-        button_color = category["button_color"]
 
         super().__init__(
             master,
@@ -112,13 +117,17 @@ class Card(tk.CTkFrame):
         )
         description_label.pack(padx=5, expand=True, anchor=tkinter.W)
 
+        def on_click():
+            g.category_index = index
+            Routes.go_to(Routes.question_page, run_function=question_page_function)
+
         button = tk.CTkButton(
             self,
             text="Get Help",
             fg_color=bg_color,
             text_color=constants.grey800,
             hover=False,
-            command=lambda: Routes.go_to(Routes.question_page, run_function=question_page_function),
+            command=on_click,
         )
         button.pack(pady=8, padx=8, anchor=tkinter.S, side="right")
 
@@ -162,6 +171,8 @@ class SolutionCard(tk.CTkFrame):
     def __init__(
         self,
         master,
+        text,
+        link,
         **kwargs,
     ):
         super().__init__(
@@ -170,7 +181,9 @@ class SolutionCard(tk.CTkFrame):
             **kwargs,
         )
 
-        solution_icon = ImageWidget(self, image_path="./ui/assets/solution.png", scale=0.6)
+        solution_icon = ImageWidget(
+            self, image_path="./ui/assets/solution.png", scale=0.6
+        )
         solution_icon.pack(side="left", padx=20, pady=30, anchor=tkinter.NW)
 
         w.GapH(self, height=20).pack()
@@ -187,20 +200,21 @@ class SolutionCard(tk.CTkFrame):
         # Description
         description_label = tk.CTkLabel(
             self,
-            text="This is text for the solution, it could be long.\n- Step 1\n- Step 2\n- Step 3\nAt the end, this is more text.",
+            text=text,
             font=("Product Sans", 17),
             text_color=constants.grey700,
             justify="left",
             anchor="w",
+            wraplength=450,
         )
         description_label.pack(fill="both", padx=20, pady=10, expand=True)
 
         # Google Search Button
         google_button = tk.CTkButton(
             self,
-            text="Continue Searching on Google.com",
+            text=utils.shorten_text(f"More info on {link}"),
             fg_color=constants.green600,
-            command=lambda: utils.open_url("https://www.google.com/"),
+            command=lambda: utils.open_url(link),
         )
         google_button.pack(pady=10, anchor=tkinter.W, padx=20)
 
@@ -211,6 +225,7 @@ class OtherSolutionCard(tk.CTkFrame):
     def __init__(
         self,
         master,
+        text,
         **kwargs,
     ):
         super().__init__(
@@ -224,7 +239,7 @@ class OtherSolutionCard(tk.CTkFrame):
         # Title
         title_label = tk.CTkLabel(
             self,
-            text="Looking for more solutions?",
+            text="How we found this solution?",
             font=("Product Sans", 20),
             text_color=constants.grey600,
         )
@@ -233,7 +248,7 @@ class OtherSolutionCard(tk.CTkFrame):
         # Description
         description_label = tk.CTkLabel(
             self,
-            text="This is text for the solution, it could be long.\n- Step 1\n- Step 2\n- Step 3\nAt the end, this is more text.",
+            text=text,
             font=("Product Sans", 17),
             text_color=constants.grey700,
             justify="left",
