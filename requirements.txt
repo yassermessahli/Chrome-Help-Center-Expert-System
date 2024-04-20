@@ -1,1 +1,6 @@
 aima3==1.0.11
+AwesomeTkinter==2021.11.8
+tk==8.6.12
+pillow==10.2.0
+ctkcomponents==0.4
+customtkinter==5.2.2
