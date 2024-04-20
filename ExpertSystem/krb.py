@@ -36,7 +36,7 @@ rules = {
 'WebsiteNotLoading(Specific)' ,
 'WebsiteNotLoading(Specific) & PageRefreshed(Yes) ==> Potential(WebsiteIssue) ' ,
 'WebsiteNotLoading(Specific) & PageRefreshed(Yes) ==>  Potential(UserSideProblem)' ,
-'Potential(WebsiteIssue) & InternetConnection(High) ==> ProblemType(WebsiteIssue)' ,
+'Potential(WebsiteIssue) & InternetConnection(High) ==> ProblemType(Website-side problem)' ,
 '(Potential(UserSideProblem)) & InternetConnection(Low) ==> ProblemType(NetworkConnectivityIssue)' ,
 'WebsiteContent(Outdated) ==> Potential(ContentUpdate)' ,
 'Potential(ContentUpdate) & WebsiteUpdateInfoChecked(Checked) ==> ProblemType(WebsiteContentOutdated)' ,
