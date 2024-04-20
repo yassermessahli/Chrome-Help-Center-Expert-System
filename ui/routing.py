@@ -1,5 +1,4 @@
 import customtkinter as tk
-
 from ui.constants import constants
 
 
