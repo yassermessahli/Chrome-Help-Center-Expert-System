@@ -1,7 +1,7 @@
 import re
 
 priorities = {
-    "HardWare": { "BrowsingExperience": 1, "Extensions": 4, "Tabs": 3, "Ram": 2},
+    "Performance": {"Tabs": , "Extensions", Cpu},
     "category2": { "qst1": 2, "qst2": 3, "qst3": 1},
     "category3": { "qst1": 3, "qst2": 1, "qst3": 2},
 }
