@@ -111,7 +111,7 @@ installation_problems = {
         'Helpful Link': 'https://support.microsoft.com/en-us/windows/find-out-which-version-of-windows-your-pc-is-using-4436ce92-4769-cd96-2d75-9bfd1550343c',
     },
     'InsufficientPermissions': {
-        'Advice': 'If logged in as a standard user, insufficient permissions may prevent successful installation. Log in as an administrator or contact your system administrator to request elevated privileges for installation. Review user account settings and permissions to ensure that you have the necessary access rights. If permissions errors persist, consult your organization's IT department for assistance.',
+        'Advice': 'If logged in as a standard user, insufficient permissions may prevent successful installation. Log in as an administrator or contact your system administrator to request elevated privileges for installation. Review user account settings and permissions to ensure that you have the necessary access rights. If permissions errors persist, consult your organization\'s IT department for assistance.',
         'Helpful Link': 'https://support.microsoft.com/en-us/windows/manage-accounts-in-windows-3a21b51f-dc0d-552b-7bbd-7e4d66afb495',
     },
 }
