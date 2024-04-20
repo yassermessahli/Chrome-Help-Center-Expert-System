@@ -8,6 +8,7 @@ from globals import answers
 from routing import Routes
 
 
+
 def result_page():
     # before doing anything, clear the content in this page, remove all widgets
     for widget in Routes.result_page.winfo_children():
@@ -18,6 +19,12 @@ def result_page():
     w.GapH(page, height=20).pack()
 
     print(f"====================\nAnswers: {answers}\n====================")
+
+    # result, explanation = run(answers)
+
+    # print(f"====================\nResult: {result}\n====================")
+
+    # print(f"====================\nExplanation: {explanation}\n====================")
 
     # show answers
     tk.CTkLabel(

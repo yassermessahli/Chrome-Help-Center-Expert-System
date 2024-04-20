@@ -11,8 +11,18 @@ from pages.welcome_page import welcome_page
 from pages.result_page import result_page
 from routing import Routes
 
+
 tk.set_default_color_theme("./theme.json")
 tk.set_appearance_mode("light")
+
+answers = ["Extensions(High)", "Ram(Slow)", "BrowsingExperience(Slow)", "Tabs(High)"]
+
+result, explanation = run("HardWare", answers)
+
+print("result:")
+print(result)
+print("explanation:")
+print(explanation)
 
 
 # Render pages
