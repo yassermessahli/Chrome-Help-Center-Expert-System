@@ -1,4 +1,6 @@
 import customtkinter as tk
+
+
 from ui.constants import constants
 
 
@@ -48,7 +50,7 @@ class Routes:
         page.grid(row=0, column=0, sticky="nsew")
         page.tkraise()
 
-    result_page.grid(row=0, column=0, sticky="nsew")
+    welcome_page.grid(row=0, column=0, sticky="nsew")
 
     routes = [
         welcome_page,
