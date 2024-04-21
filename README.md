@@ -12,7 +12,7 @@ We chose to focus on creating a **Google Chrome Technical Support System** becau
 
 ## General Description
 
-Our project focuses on developing an **expert system **application using `aima3` and `tkinter`. This
+Our project focuses on developing an **expert system** application using `aima3` and `tkinter`. This
 system is designed to assist users in resolving technical problems encountered while using Google
 Chrome. The application organizes Chrome issues into distinct categories such as **Performance**, **Security**, **Installation**, and others.
 
