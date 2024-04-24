@@ -11,7 +11,12 @@ from aima3.utils import expr
 
 
 # the main function of forward chaining
-def ask(rules, facts, goal, entailment_process=None):
+def ask(rules: list, facts: list, goal: str, entailment_process=None):
+    """
+    A derivation of The original forward chaining algorithm of aima3. 
+    Takes a rules base, a set of facts, and a goal expression. 
+    Returns all substitutions that make the goal expression true.
+    """
     # initiate the knowledge base
     KB = FolKB()
     for fact in facts:
