@@ -6,11 +6,6 @@ from expert_system.krb import rules
 from expert_system.forward_chaining import ask
 from expert_system.utils import Agenda
 
-
-class ddd:
-    
-    
-
 # the main function to run the inference engine
 def run(category: str, answers: list):
     """
