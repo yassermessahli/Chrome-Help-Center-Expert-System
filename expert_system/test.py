@@ -7,7 +7,7 @@ a = ['Tabs(High)', 'Extensions(Low)', 'Cpu(Low)', 'ChromeVersion(Outdated)', 'Ra
 
 result, explanation = run("Performance", a)
 
-print("result:")
-print(result)
-print("explanation:")
-print(explanation)
+# print("result:")
+# print(result)
+# print("explanation:")
+# print(explanation)

@@ -64,8 +64,8 @@ def solution_and_explanation():
         # convertin result to advice
 
         advice_cat = advice_list[category_name]
-        print(advice_cat.keys())
-        print(result_formatted)
+        # print(advice_cat.keys())
+        # print(result_formatted)
         advice = advice_cat[str(result_formatted)]
         return result_formatted, advice["advice"], advice["link"], explanation_formatted
     except:  # noqa: E722

@@ -20,10 +20,8 @@ def main():
 
     restult, explanation = run("Performance", answers)
 
-    print(f"Result: {restult}")
+    # print(f"Result: {restult}")
 
 
 # if __name__ == "__main__":
 #     main()
-ExtensionRelatedSlowdown
-ExtensionRelatedSlowdown

@@ -159,4 +159,4 @@ advice = {
     },
 }
 
-print(advice["Performance"]["ExtensionRelatedSlowdown"]["advice"])
+# print(advice["Performance"]["ExtensionRelatedSlowdown"]["advice"])
