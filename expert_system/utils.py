@@ -81,11 +81,12 @@ priorities = {
 
 
 class Agenda:
+    """The agenda class. Used to resolve conflict between fired rules. by sorting the facts based on their priority."""
 
     def __init__(self, category):
         self.priority_dict = priorities.get(category, None)
         
-    def get_priority(self, fact):
+    def get_priority(self, fact: str):
         match = re.match(r'^(\w+)', fact)
         if match:
             predicate = match.group(1)
@@ -93,7 +94,7 @@ class Agenda:
                 return self.priority_dict[predicate]
         return float('inf')
          
-    def perform_sort(self, facts):
+    def perform_sort(self, facts: list):
         try:
             return sorted(facts, key=lambda x: self.get_priority(x))
         except Exception as e:

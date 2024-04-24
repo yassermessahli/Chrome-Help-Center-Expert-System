@@ -7,11 +7,19 @@ from expert_system.forward_chaining import ask
 from expert_system.utils import Agenda
 
 
+class ddd:
+    
+    
 
 # the main function to run the inference engine
 def run(category: str, answers: list):
-    # STEPS:
+    """
+    The inference engine run function.
+    Takes the problem category and the answers to the questions. and returns the problem type and the explanation (how it infere to find the result).
+    Use forward chaining algorithm
+    """
     
+    # STEPS:
     # 1. based on the category, get the appropriate rules
     rules_base = rules[category]
     
@@ -28,6 +36,7 @@ def run(category: str, answers: list):
         explanation_unit = {}
         result = list(ask(rules_base, firable_facts, goal_expr, explanation_unit))
     
+    # retur the result and the explanation
     try:
         return result[0], explanation_unit
     except Exception:
