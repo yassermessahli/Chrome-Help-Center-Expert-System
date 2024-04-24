@@ -2,7 +2,7 @@
 from aima3.utils import expr
 from aima3.logic import FolKB
 
-from expert_system.krb import rules
+from expert_system.kb import rules
 from expert_system.forward_chaining import ask
 from expert_system.utils import Agenda
 
