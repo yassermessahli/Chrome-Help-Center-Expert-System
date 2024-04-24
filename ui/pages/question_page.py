@@ -28,6 +28,10 @@ def question_page():
     def next_question():
         nonlocal current_index
         radio_value = radio_vars[current_index].get()
+
+        if radio_value == "Null":
+            return
+
         radio_dict = ast.literal_eval(radio_value)
         value = radio_dict["value"]
         g.answers.append(value)
